@@ -1,0 +1,267 @@
+/* Poker bot hackathon promo site: one stylesheet for every page. */
+
+:root {
+  --bg: #fdfdfb;
+  --text: #1a1a1a;
+  --muted: #595959;      /* 7:1 on --bg */
+  --accent: #0a5c36;     /* felt green, 7.6:1 on --bg */
+  --red-suit: #a4161a;   /* hearts and diamonds */
+  --rule: #d4d4d0;
+  --box: #f3f3ef;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+}
+
+.site-header-inner {
+  max-width: 42em;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+}
+
+.site-name {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Main content ---------- */
+
+main {
+  display: block;
+  max-width: 42em;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  margin: 1rem 0 0.25rem;
+}
+
+.pitch {
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+section {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+/* Sections are link targets; keep headings clear of the top edge. */
+[id] {
+  scroll-margin-top: 1rem;
+}
+
+.suit {
+  margin-right: 0.35em;
+  color: var(--text);
+}
+
+.suit-red {
+  color: var(--red-suit);
+}
+
+.tag {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- Hero fact strip ---------- */
+
+.facts {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 36em) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fact {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--box);
+  padding: 0.75rem 1rem;
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid var(--rule);
+}
+
+.timeline li {
+  margin: 0 0 1.25rem;
+}
+
+.timeline li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline strong {
+  display: block;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq details {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.5rem 0;
+}
+
+.faq details:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+
+.faq details p {
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 0.7rem 1.25rem;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+a.button:hover {
+  background: #084a2b;
+  border-color: #084a2b;
+}
+
+.button[disabled] {
+  background: #e6e6e3;
+  border-color: #c4c4c0;
+  color: #595959;
+  cursor: not-allowed;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.site-footer-inner {
+  max-width: 42em;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+.site-footer p {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
