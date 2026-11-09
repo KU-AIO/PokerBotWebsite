@@ -133,7 +133,8 @@ section {
   color: var(--text);
 }
 
-.suit-red {
+#how-it-works .suit,
+#timeline .suit {
   color: var(--red-suit);
 }
 
