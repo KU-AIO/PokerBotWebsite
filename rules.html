@@ -8,41 +8,58 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a class="site-name" href="index.html">{{EVENT_NAME}}</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#timeline">Timeline</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#sponsor">Sponsor</a></li>
-          <li><a href="rules.html" aria-current="page">Rules</a></li>
-        </ul>
-      </nav>
+  <div class="band band--navy page">
+    <div class="wrap">
+      <a class="back-link" href="index.html">← Back to home</a>
+      <main class="prose">
+        <h1>Rules</h1>
+
+        <section aria-labelledby="rules-heading">
+          <h2 id="rules-heading">Rules</h2>
+          <!-- TBD(open): competition rules -->
+          <p>Coming soon.</p>
+        </section>
+
+        <section aria-labelledby="conduct-heading">
+          <h2 id="conduct-heading">Code of conduct</h2>
+          <!-- TBD(open): code of conduct -->
+          <p>Coming soon.</p>
+        </section>
+      </main>
     </div>
-  </header>
-
-  <main>
-    <h1>Rules</h1>
-
-    <section aria-labelledby="rules-heading">
-      <h2 id="rules-heading">Rules</h2>
-      <!-- TBD(open): competition rules -->
-      <p>Coming soon.</p>
-    </section>
-
-    <section aria-labelledby="conduct-heading">
-      <h2 id="conduct-heading">Code of conduct</h2>
-      <!-- TBD(open): code of conduct -->
-      <p>Coming soon.</p>
-    </section>
-  </main>
+  </div>
 
   <footer class="site-footer">
-    <div class="site-footer-inner">
-      <p>Hosted by the KU AI Organization</p>
-      <p><a href="rules.html">Rules &amp; code of conduct</a></p>
+    <div class="wrap footer-grid">
+      <div>
+        <p><a class="footer-name" href="index.html">{{EVENT_NAME}}</a></p>
+        <p>Hosted by the KU AI Organization</p>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></li>
+          <!-- TBD(leaning): Instagram link -->
+          <li><a href="https://www.instagram.com/ku_ai_club/">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Find us</p>
+        <!-- TBD(leaning): LEEP2 location -->
+        <p>LEEP2, University of Kansas</p>
+        <p>Lawrence, KS</p>
+      </div>
+      <div>
+        <p class="footer-heading">More</p>
+        <ul>
+          <li><a href="rules.html" aria-current="page">Rules &amp; code of conduct</a></li>
+          <li><a href="index.html#sponsor">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <span>© KU AI Organization</span>
+      <span aria-hidden="true">♠ ♥ ♦ ♣</span>
     </div>
   </footer>
 </body>
