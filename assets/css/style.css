@@ -145,8 +145,39 @@ h3 {
 
 /* ---------- Hero ---------- */
 
+/* Full-screen opening on every device; min-height so short phones grow instead of clipping. */
 .hero {
-  padding: 56px 0 48px;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 0 96px;
+}
+
+.hero > .wrap {
+  width: 100%;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.scroll-cue:hover {
+  color: var(--white);
 }
 
 .hero-grid {
@@ -259,30 +290,57 @@ a.btn--light:hover {
   display: flex;
   gap: 12px;
   padding-top: 8px;
+  perspective: 700px;
 }
 
+/* --lift (0 to 1) is set by assets/js/hero.js as the hero scrolls away; 0 without it. */
 .card {
+  position: relative;
+  display: inline-block;
   width: 96px;
   height: 134px;
-  border-radius: 9px;
-  background: var(--white);
-  color: var(--navy);
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 8px 11px;
   font-weight: 800;
   font-size: 1.6rem;
   line-height: 1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transform: rotate(-4deg);
+  transform: rotate(calc(-4deg - var(--lift, 0) * 6deg)) translateY(calc(var(--lift, 0) * -18px));
 }
 
 .card + .card {
-  transform: rotate(3deg) translateY(-6px);
+  transform: rotate(calc(3deg + var(--lift, 0) * 8deg)) translateY(calc(-6px - var(--lift, 0) * 26px));
 }
 
-.card--red {
+.card-flip {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.card-face,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backface-visibility: hidden;
+}
+
+.card-face {
+  background: var(--white);
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 11px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  border: 5px solid var(--white);
+  background-color: var(--blue);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.18) 0 4px, transparent 4px 9px);
+}
+
+.card--red .card-face {
   color: var(--crimson);
 }
 
@@ -320,6 +378,90 @@ a.btn--light:hover {
   width: 64%;
   border-radius: 1px;
   background: var(--crimson);
+  transform-origin: left;
+}
+
+.readout-pct {
+  display: inline-block;
+  min-width: 3ch;
+  text-align: right;
+}
+
+/* ---------- Hero entrance (plays once; skipped under reduced motion) ----------
+   Beat 1 (0s): name + face-down cards. Beat 2: details rise. Beat 3: cards turn up.
+   Beat 4: p(win) bar fills while hero.js counts 0 -> 64%. Then "-> raise" and the scroll cue.
+   Without animation every element simply shows its final state. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
+    --fill-start: 2.4s;
+    --fill-dur: 1.5s;
+  }
+
+  .hero .wordmark {
+    animation: hero-name 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .hero .meta {
+    animation: hero-rise 0.6s ease-out 0.7s both;
+  }
+
+  .hero .pitch {
+    animation: hero-rise 0.6s ease-out 0.85s both;
+  }
+
+  .hero .actions {
+    animation: hero-rise 0.6s ease-out 1s both;
+  }
+
+  .card-flip {
+    animation: hero-turn-up 0.65s cubic-bezier(0.3, 0.7, 0.3, 1) 1.4s both;
+  }
+
+  .card + .card .card-flip {
+    animation-delay: 1.6s;
+  }
+
+  .readout {
+    animation: hero-fade 0.5s ease-out 2.2s both;
+  }
+
+  .readout-fill {
+    animation: hero-fill var(--fill-dur) cubic-bezier(0.65, 0, 0.35, 1) var(--fill-start) both;
+  }
+
+  .readout-act {
+    animation: hero-fade 0.4s ease-out calc(var(--fill-start) + var(--fill-dur) + 0.1s) both;
+  }
+
+  .scroll-cue {
+    animation: hero-fade 0.6s ease-out calc(var(--fill-start) + var(--fill-dur) + 0.4s) both;
+  }
+}
+
+@keyframes hero-name {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hero-turn-up {
+  from { transform: rotateY(180deg); }
+  to { transform: rotateY(0); }
+}
+
+@keyframes hero-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 /* ---------- Timeline ---------- */
@@ -606,7 +748,7 @@ a.btn--light:hover {
   }
 
   .hero {
-    padding: 88px 0 72px;
+    padding: 88px 0 104px;
   }
 
   .hero-grid {

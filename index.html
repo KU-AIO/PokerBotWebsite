@@ -6,6 +6,7 @@
   <title>{{EVENT_NAME}}</title>
   <meta name="description" content="A poker bot competition on Saturday, April 3, 2027, open to students from any school, any experience level.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/hero.js" defer></script>
 </head>
 <body id="top">
   <main>
@@ -24,12 +25,13 @@
         </div>
         <div class="hand" aria-hidden="true">
           <div class="cards">
-            <span class="card"><span class="card-rank">A</span><span class="card-suit">♠&#xFE0E;</span></span>
-            <span class="card card--red"><span class="card-rank">K</span><span class="card-suit">♥&#xFE0E;</span></span>
+            <span class="card"><span class="card-flip"><span class="card-face"><span class="card-rank">A</span><span class="card-suit">♠&#xFE0E;</span></span><span class="card-back"></span></span></span>
+            <span class="card card--red"><span class="card-flip"><span class="card-face"><span class="card-rank">K</span><span class="card-suit">♥&#xFE0E;</span></span><span class="card-back"></span></span></span>
           </div>
-          <p class="readout">p(win) <span class="readout-bar"><span class="readout-fill"></span></span> 64% → raise</p>
+          <p class="readout">p(win) <span class="readout-bar"><span class="readout-fill"></span></span> <span class="readout-pct" data-count-to="64">64%</span> <span class="readout-act">→ raise</span></p>
         </div>
       </div>
+      <a class="scroll-cue" href="#timeline">Scroll<span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="band band--deep" id="timeline" aria-labelledby="timeline-heading">
