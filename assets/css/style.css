@@ -59,6 +59,7 @@ body {
   font-weight: 500;
   line-height: 1.55;
   overflow-wrap: break-word;
+  font-variant-emoji: text;   /* suit glyphs aren't in the web fonts; keep them monochrome, not emoji */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -611,6 +612,11 @@ a.btn--light:hover {
   .hero-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
     gap: 48px;
+  }
+
+  /* Narrower copy column in the two-column hero: keep real names from breaking mid-word. */
+  .wordmark {
+    font-size: clamp(2.5rem, 6.5vw, 5rem);
   }
 
   .hand {
