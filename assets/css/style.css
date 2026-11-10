@@ -59,6 +59,15 @@ body {
   font-weight: 500;
   line-height: 1.55;
   overflow-wrap: break-word;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Short pages: the content band grows so the footer sits at the bottom. */
+body > main,
+.page {
+  flex: 1 0 auto;
 }
 
 a {
@@ -407,8 +416,9 @@ a.btn--light:hover {
 .avatar {
   display: grid;
   place-items: center;
-  width: 96px;
-  height: 96px;
+  width: 100%;
+  max-width: 96px;
+  aspect-ratio: 1;
   margin: 0 auto;
   border-radius: 50%;
   background: #1a3472;
@@ -456,10 +466,6 @@ a.btn--light:hover {
 }
 
 /* ---------- Rules / 404 ---------- */
-
-.page {
-  min-height: 60vh;
-}
 
 .back-link {
   display: inline-block;
@@ -643,8 +649,7 @@ a.btn--light:hover {
   }
 
   .avatar {
-    width: 112px;
-    height: 112px;
+    max-width: 112px;
     font-size: 1.6rem;
   }
 
