@@ -8,140 +8,167 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="top">
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a class="site-name" href="#top">{{EVENT_NAME}}</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#sponsor">Sponsor</a></li>
-          <li><a href="rules.html">Rules</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <main>
-    <div class="hero">
-      <h1>{{EVENT_NAME}}</h1>
-      <p class="pitch">Build a bot that plays poker on its own.</p>
-
-      <ul class="facts">
-        <li class="fact">
-          <span class="fact-label">When</span>
-          Saturday, April 3, 2027
-        </li>
-        <li class="fact">
-          <span class="fact-label">Who</span>
-          Any student, any school, any experience level
-        </li>
-        <li class="fact">
-          <span class="fact-label">Sign up</span>
-          <!-- TBD(leaning): registration opens January 2027 -->
-          Opens January 2027 <span class="tag">(planned)</span>
-        </li>
-      </ul>
-
-      <!-- TBD(leaning): registration timing; enable and link the button when registration opens -->
-      <button class="button" type="button" disabled>Registration opens January 2027</button>
-    </div>
-
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading"><span class="suit" aria-hidden="true">♠</span>What it is</h2>
-      <p>You write a program that plays poker by itself. It looks at its cards and the table, then decides when to bet, call or fold, with no one pressing the buttons for it. Then the bots play each other.</p>
-      <p>You don't need any poker or AI background. If you're curious about building a bot that makes its own decisions, you can take part.</p>
-    </section>
-
-    <section id="how-it-works" aria-labelledby="how-heading">
-      <h2 id="how-heading"><span class="suit" aria-hidden="true">♥</span>How it works <span class="tag">(planned)</span></h2>
-      <!-- TBD(leaning): format (multi-week submission window, then in-person finish on event day) -->
-      <p>The plan is for teams to build and test their bots during a submission window lasting a few weeks. The competition then wraps up in person on event day.</p>
-    </section>
-
-    <section id="timeline" aria-labelledby="timeline-heading">
-      <h2 id="timeline-heading"><span class="suit" aria-hidden="true">♦</span>Timeline</h2>
-      <ol class="timeline">
-        <li>
-          <!-- TBD(leaning): registration opens January 2027 -->
-          <strong>January 2027 <span class="tag">(planned)</span></strong>
-          Registration opens.
-        </li>
-        <li>
-          <!-- TBD(leaning): submission window opens early March 2027 -->
-          <!-- TBD(open): submission window dates -->
-          <strong>Early March 2027 <span class="tag">(planned)</span></strong>
-          The submission window opens. Exact dates will be announced.
-        </li>
-        <li>
-          <strong>Saturday, April 3, 2027</strong>
-          Event day, in person.
-        </li>
-      </ol>
-    </section>
-
-    <section id="faq" aria-labelledby="faq-heading">
-      <h2 id="faq-heading"><span class="suit" aria-hidden="true">♣</span>FAQ</h2>
-      <div class="faq">
-        <details open>
-          <summary>Who can join?</summary>
-          <p>Any student from any school, at any experience level.</p>
-        </details>
-        <details>
-          <summary>Do I need to know poker or AI?</summary>
-          <p>No. Beginners are welcome.</p>
-        </details>
-        <details>
-          <summary>When is it?</summary>
-          <p>Event day is Saturday, April 3, 2027, in person.</p>
-        </details>
-        <details>
-          <summary>Does it cost anything?</summary>
-          <!-- TBD(open): cost -->
-          <p>Not decided yet.</p>
-        </details>
-        <details>
-          <summary>How big are teams?</summary>
-          <!-- TBD(open): team size -->
-          <p>Not decided yet.</p>
-        </details>
-        <details>
-          <summary>Which programming language?</summary>
-          <!-- TBD(open): programming language -->
-          <p>Not decided yet.</p>
-        </details>
-        <details>
-          <summary>Can I take part remotely?</summary>
-          <!-- TBD(open): remote participation -->
-          <p>Not decided yet.</p>
-        </details>
-        <details>
-          <summary>Are there prizes?</summary>
-          <!-- TBD(open): prizes -->
-          <p>Not decided yet.</p>
-        </details>
+    <section class="band band--navy hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 class="wordmark">{{EVENT_NAME}}</h1>
+          <p class="meta"><span class="meta-mark" aria-hidden="true">♦</span> <strong>2027</strong> · Saturday, April 3 · Lawrence, KS</p>
+          <p class="pitch">Build a bot that plays poker on its own.</p>
+          <div class="actions">
+            <!-- TBD(leaning): registration timing; enable and link the button when registration opens -->
+            <button class="btn btn--primary" type="button" disabled>Registration opens January 2027</button>
+            <!-- TBD(open): event Discord; when decided add <a class="btn btn--secondary" href="DISCORD_URL">Join Discord</a> -->
+          </div>
+          <!-- TBD(open): sponsors; "Sponsored by" row goes here once confirmed (no logos until approved) -->
+        </div>
+        <div class="hand" aria-hidden="true">
+          <div class="cards">
+            <span class="card"><span class="card-rank">A</span><span class="card-suit">♠</span></span>
+            <span class="card card--red"><span class="card-rank">K</span><span class="card-suit">♥</span></span>
+          </div>
+          <p class="readout">p(win) <span class="readout-bar"><span class="readout-fill"></span></span> 64% → raise</p>
+        </div>
       </div>
     </section>
 
-    <section id="sponsor" aria-labelledby="sponsor-heading">
-      <h2 id="sponsor-heading">Interested in sponsoring?</h2>
-      <p>We're looking for partners who want to meet students building poker bots. Email us and we'll share the details.</p>
-      <p><a class="button" href="mailto:{{CONTACT_EMAIL}}">Email {{CONTACT_EMAIL}}</a></p>
+    <section class="band band--deep" id="timeline" aria-labelledby="timeline-heading">
+      <div class="wrap">
+        <h2 class="band-title" id="timeline-heading">Timeline</h2>
+        <ol class="timeline">
+          <li>
+            <!-- TBD(leaning): registration opens January 2027 -->
+            <span class="tl-date">January 2027</span>
+            <span class="tl-what">Registration opens.</span>
+            <span class="tl-note"><span class="tag">(planned)</span></span>
+          </li>
+          <li>
+            <!-- TBD(leaning): submission window opens early March 2027 -->
+            <!-- TBD(open): submission window dates -->
+            <span class="tl-date">Early March 2027</span>
+            <span class="tl-what">The submission window opens. Exact dates will be announced.</span>
+            <span class="tl-note"><span class="tag">(planned)</span></span>
+          </li>
+          <li class="is-key">
+            <span class="tl-date"><span class="tl-mark" aria-hidden="true">♦</span>Saturday, April 3, 2027</span>
+            <span class="tl-what">Event day, in person.</span>
+            <span class="tl-note">Lawrence, KS</span>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <p>Questions? Email <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
-      <!-- TBD(leaning): Discord invite sent to registrants after signup; no public link -->
-      <p>Registrants get a Discord invite after signing up. <span class="tag">(planned)</span></p>
+    <section class="band band--blue" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap">
+        <h2 class="band-title" id="faq-heading">FAQ</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Who can join?</h3>
+            <p>Any student from any school, at any experience level.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do I need to know poker or AI?</h3>
+            <p>No. Beginners are welcome.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does it work?</h3>
+            <!-- TBD(leaning): format (multi-week submission window, then in-person finish on event day) -->
+            <p>The plan is for teams to build and test their bots during a submission window lasting a few weeks. The competition then wraps up in person on event day. <span class="tag">(planned)</span></p>
+          </div>
+          <div class="faq-item">
+            <h3>When is it?</h3>
+            <p>Event day is Saturday, April 3, 2027, in person.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does it cost anything?</h3>
+            <!-- TBD(open): cost -->
+            <p>Not decided yet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How big are teams?</h3>
+            <!-- TBD(open): team size -->
+            <p>Not decided yet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Which programming language?</h3>
+            <!-- TBD(open): programming language -->
+            <p>Not decided yet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I take part remotely?</h3>
+            <!-- TBD(open): remote participation -->
+            <p>Not decided yet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Are there prizes?</h3>
+            <!-- TBD(open): prizes -->
+            <p>Not decided yet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I get into the Discord?</h3>
+            <!-- TBD(leaning): Discord invite sent to registrants after signup; no public link -->
+            <p>Registrants get a Discord invite after signing up. <span class="tag">(planned)</span></p>
+          </div>
+        </div>
+        <p class="faq-more"><a href="rules.html">Full rules &amp; code of conduct →</a></p>
+      </div>
+    </section>
+
+    <section class="band band--navy" aria-labelledby="organizers-heading">
+      <div class="wrap">
+        <h2 class="band-title" id="organizers-heading">Organizers</h2>
+        <!-- TBD(open): organizer names, roles, photos -->
+        <ul class="team">
+          <li class="person"><span class="avatar" aria-hidden="true">♠</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true">♥</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true">♦</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true">♣</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true">♠</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true">♥</span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+        </ul>
+
+        <div class="cta" id="sponsor">
+          <div>
+            <h2 id="sponsor-heading">Interested in sponsoring?</h2>
+            <p>We're looking for partners who want to meet students building poker bots. Email us and we'll share the details.</p>
+          </div>
+          <a class="btn btn--light" href="mailto:{{CONTACT_EMAIL}}">Email us</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer-inner">
-      <p>Hosted by the KU AI Organization</p>
-      <p><a href="rules.html">Rules &amp; code of conduct</a></p>
+    <div class="wrap footer-grid">
+      <div>
+        <p><a class="footer-name" href="index.html">{{EVENT_NAME}}</a></p>
+        <p>Hosted by the KU AI Organization</p>
+      </div>
+      <div id="contact">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></li>
+          <!-- TBD(leaning): Instagram link -->
+          <li><a href="https://www.instagram.com/ku_ai_club/">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Find us</p>
+        <!-- TBD(leaning): LEEP2 location -->
+        <p>LEEP2, University of Kansas</p>
+        <p>Lawrence, KS</p>
+      </div>
+      <div>
+        <p class="footer-heading">More</p>
+        <ul>
+          <li><a href="rules.html">Rules &amp; code of conduct</a></li>
+          <li><a href="index.html#sponsor">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <span>© KU AI Organization</span>
+      <span aria-hidden="true">♠ ♥ ♦ ♣</span>
     </div>
   </footer>
 </body>
