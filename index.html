@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/hero.js" defer></script>
 </head>
-<body id="top">
+<body>
   <main>
     <section class="band band--navy hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1 class="wordmark">{{EVENT_NAME}}</h1>
-          <p class="meta"><span class="meta-mark" aria-hidden="true">♦&#xFE0E;</span> <strong>2027</strong> · Saturday, April 3 · Lawrence, KS</p>
+          <p class="meta"><strong>2027</strong> · Saturday, April 3 · Lawrence, KS</p>
           <p class="pitch">Build a bot that plays poker on its own.</p>
           <div class="actions">
             <!-- TBD(leaning): registration timing; enable and link the button when registration opens -->
@@ -25,13 +25,13 @@
         </div>
         <div class="hand" aria-hidden="true">
           <div class="cards">
-            <span class="card"><span class="card-flip"><span class="card-face"><span class="card-rank">A</span><span class="card-suit">♠&#xFE0E;</span></span><span class="card-back"></span></span></span>
-            <span class="card card--red"><span class="card-flip"><span class="card-face"><span class="card-rank">K</span><span class="card-suit">♥&#xFE0E;</span></span><span class="card-back"></span></span></span>
+            <span class="card"><span class="card-flip"><span class="card-face"><span class="card-index">A<span class="card-pip">♠&#xFE0E;</span></span><span class="card-suit">♠&#xFE0E;</span><span class="card-index card-index--flip">A<span class="card-pip">♠&#xFE0E;</span></span></span><span class="card-back"></span></span></span>
+            <span class="card card--red"><span class="card-flip"><span class="card-face"><span class="card-index">K<span class="card-pip">♥&#xFE0E;</span></span><span class="card-suit">♥&#xFE0E;</span><span class="card-index card-index--flip">K<span class="card-pip">♥&#xFE0E;</span></span></span><span class="card-back"></span></span></span>
           </div>
           <p class="readout">p(win) <span class="readout-bar"><span class="readout-fill"></span></span> <span class="readout-pct" data-count-to="64">64%</span> <span class="readout-act">→ raise</span></p>
         </div>
       </div>
-      <a class="scroll-cue" href="#timeline">Scroll<span aria-hidden="true">↓</span></a>
+      <a class="scroll-cue" href="#timeline" aria-label="Scroll to timeline"><span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="band band--deep" id="timeline" aria-labelledby="timeline-heading">
@@ -51,8 +51,8 @@
             <span class="tl-what">The submission window opens. Exact dates will be announced.</span>
             <span class="tl-note"><span class="tag">(planned)</span></span>
           </li>
-          <li class="is-key">
-            <span class="tl-date"><span class="tl-mark" aria-hidden="true">♦&#xFE0E;</span>Saturday, April 3, 2027</span>
+          <li>
+            <span class="tl-date">Saturday, April 3, 2027</span>
             <span class="tl-what">Event day, in person.</span>
             <span class="tl-note">Lawrence, KS</span>
           </li>
@@ -112,7 +112,6 @@
             <p>Registrants get a Discord invite after signing up. <span class="tag">(planned)</span></p>
           </div>
         </div>
-        <p class="faq-more"><a href="rules.html">Full rules &amp; code of conduct →</a></p>
       </div>
     </section>
 
@@ -131,7 +130,7 @@
 
         <div class="cta" id="sponsor">
           <div>
-            <h2 id="sponsor-heading">Interested in sponsoring?</h2>
+            <h2>Interested in sponsoring?</h2>
             <p>We're looking for partners who want to meet students building poker bots. Email us and we'll share the details.</p>
           </div>
           <a class="btn btn--light" href="mailto:{{CONTACT_EMAIL}}">Email us</a>
@@ -144,7 +143,7 @@
     <div class="wrap footer-grid">
       <div>
         <p><a class="footer-name" href="index.html">{{EVENT_NAME}}</a></p>
-        <p>Hosted by the KU AI Organization</p>
+        <p>© 2027 KU AI Organization</p>
       </div>
       <div id="contact">
         <p class="footer-heading">Contact</p>
@@ -160,17 +159,6 @@
         <p>LEEP2, University of Kansas</p>
         <p>Lawrence, KS</p>
       </div>
-      <div>
-        <p class="footer-heading">More</p>
-        <ul>
-          <li><a href="rules.html">Rules &amp; code of conduct</a></li>
-          <li><a href="index.html#sponsor">Sponsor</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="wrap legal">
-      <span>© KU AI Organization</span>
-      <span aria-hidden="true">♠&#xFE0E; ♥&#xFE0E; ♦&#xFE0E; ♣&#xFE0E;</span>
     </div>
   </footer>
 </body>
