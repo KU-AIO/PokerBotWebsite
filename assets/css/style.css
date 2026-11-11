@@ -699,7 +699,6 @@ a.btn--light:hover {
 
 .site-footer a {
   color: var(--footer-text);
-  text-decoration-color: var(--crimson);
 }
 
 .site-footer a:hover {
