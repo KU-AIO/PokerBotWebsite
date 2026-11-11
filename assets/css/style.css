@@ -112,8 +112,6 @@ h3 {
 
 .band--navy {
   background-color: var(--navy);
-  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 20px 20px;
 }
 
 .band--deep {
@@ -122,6 +120,62 @@ h3 {
 
 .band--blue {
   background: var(--blue);
+}
+
+/* Dot grid frames the page: the opening screen and the footer (plus the one-screen 404). */
+.hero,
+.page,
+.site-footer {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Content sections get one large, faint suit cropped off an edge instead. */
+.has-suit {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-suit > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.has-suit::after {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  font-size: 260px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.035);
+  transform: translateY(-50%) rotate(-12deg);
+  pointer-events: none;
+}
+
+.suit--left::after {
+  right: auto;
+  left: -60px;
+  transform: translateY(-50%) rotate(12deg);
+}
+
+.band--blue.has-suit::after {
+  color: rgba(255, 255, 255, 0.07);
+}
+
+/* Second declaration hides the glyph from screen readers where supported. */
+.suit-diamond::after {
+  content: "\2666\FE0E";
+  content: "\2666\FE0E" / "";
+}
+
+.suit-club::after {
+  content: "\2663\FE0E";
+  content: "\2663\FE0E" / "";
+}
+
+.suit-heart::after {
+  content: "\2665\FE0E";
+  content: "\2665\FE0E" / "";
 }
 
 .wrap {
@@ -591,9 +645,6 @@ a.btn--light:hover {
   margin: 0 auto;
   border-radius: 50%;
   background: #1a3472;
-  color: var(--blue-soft);
-  font-family: var(--mono);
-  font-size: 1.5rem;
 }
 
 .person-name {
@@ -670,7 +721,7 @@ a.btn--light:hover {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: var(--deep);
+  background-color: var(--deep);
   color: var(--footer-text);
   font-size: 0.875rem;
 }
@@ -809,7 +860,16 @@ a.btn--light:hover {
 
   .avatar {
     max-width: 112px;
-    font-size: 1.6rem;
+  }
+
+  .has-suit::after {
+    right: -90px;
+    font-size: 420px;
+  }
+
+  .suit--left::after {
+    right: auto;
+    left: -90px;
   }
 
   .cta {
