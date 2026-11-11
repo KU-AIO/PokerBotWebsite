@@ -26,6 +26,7 @@
   --blue-soft: #8fb3ef;
   --muted: #a9bbe4;
   --crimson: #e8000d;
+  --crimson-hover: #c4000b;
   --white: #fff;
   --on-blue: #dbe6ff;   /* secondary text on the KU-blue band, 5.8:1 */
   --footer-text: #c3d0ee;
@@ -81,9 +82,15 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--white);
+  outline: 3px solid var(--crimson);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* Crimson on KU blue is ~1.5:1, too faint for a focus ring; keep it white there. */
+.band--blue :focus-visible,
+.cta :focus-visible {
+  outline-color: var(--white);
 }
 
 /* Link targets: keep headings clear of the top edge. */
@@ -240,8 +247,8 @@ h3 {
 }
 
 a.btn--primary:hover {
-  background: #c4000b;
-  border-color: #c4000b;
+  background: var(--crimson-hover);
+  border-color: var(--crimson-hover);
 }
 
 .btn--primary[disabled] {
@@ -509,12 +516,12 @@ a.btn--light:hover {
 .timeline li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 4px;
-  width: 12px;
-  height: 12px;
+  left: 2px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--blue-soft);
+  background: var(--crimson);
 }
 
 .timeline li:last-child {
@@ -692,6 +699,7 @@ a.btn--light:hover {
 
 .site-footer a {
   color: var(--footer-text);
+  text-decoration-color: var(--crimson);
 }
 
 .site-footer a:hover {
