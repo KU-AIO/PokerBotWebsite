@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{EVENT_NAME}}</title>
-  <meta name="description" content="A poker bot competition on Saturday, April 3, 2027, open to students from any school, any experience level.">
+  <title>KU Pokerbots</title>
+  <meta name="description" content="KU Pokerbots: a poker bot competition hosted by the KU AI Club. Event day is Saturday, April 3, 2027 in Lawrence, KS, open to students from any school, any experience level.">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/hero.js" defer></script>
 </head>
@@ -13,12 +13,12 @@
     <section class="band band--navy hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1 class="wordmark">{{EVENT_NAME}}</h1>
+          <h1 class="wordmark">KU Pokerbots</h1>
           <p class="meta">Saturday, April 3, 2027 · Lawrence, KS</p>
           <p class="pitch">Build a bot that plays poker on its own.</p>
           <div class="actions">
-            <!-- TBD(leaning): registration timing; enable and link the button when registration opens -->
-            <button class="btn btn--primary" type="button" disabled>Registration opens January 2027</button>
+            <!-- Enable and link the button when registration opens -->
+            <button class="btn btn--primary" type="button" disabled>Registration opens late January 2027</button>
             <!-- TBD(open): event Discord; when decided add <a class="btn btn--secondary" href="DISCORD_URL">Join Discord</a> -->
           </div>
           <!-- TBD(open): sponsors; "Sponsored by" row goes here once confirmed (no logos until approved) -->
@@ -39,17 +39,19 @@
         <h2 class="band-title" id="timeline-heading">Timeline</h2>
         <ol class="timeline">
           <li>
-            <!-- TBD(leaning): registration opens January 2027 -->
-            <span class="tl-date">January 2027</span>
+            <span class="tl-date">Late January 2027</span>
             <span class="tl-what">Registration opens.</span>
-            <span class="tl-note"><span class="tag">(planned)</span></span>
+            <span class="tl-note"></span>
           </li>
           <li>
-            <!-- TBD(leaning): submission window opens early March 2027 -->
-            <!-- TBD(open): submission window dates -->
-            <span class="tl-date">Early March 2027</span>
-            <span class="tl-what">The submission window opens. Exact dates will be announced.</span>
-            <span class="tl-note"><span class="tag">(planned)</span></span>
+            <span class="tl-date">Monday, March 8, 2027</span>
+            <span class="tl-what">The submission window opens.</span>
+            <span class="tl-note"></span>
+          </li>
+          <li>
+            <span class="tl-date">Friday, April 2, 2027</span>
+            <span class="tl-what">The submission window closes.</span>
+            <span class="tl-note"></span>
           </li>
           <li>
             <span class="tl-date">Saturday, April 3, 2027</span>
@@ -65,17 +67,28 @@
         <h2 class="band-title" id="faq-heading">FAQ</h2>
         <div class="faq-grid">
           <div class="faq-item">
+            <h3>Why poker?</h3>
+            <p>Poker, as a game of making decisions under uncertainty, is a great application of understanding and applying game theory, probability, decision-making skills, and your intuition. We believe taking this challenging game to the next step by having students apply their knowledge through code is a way to showcase unique problem-solving and creativity through a competition.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How does it work?</h3>
+            <p>Once the submission window opens, build and test a poker-playing bot in Python within our guidelines. Your final submission goes up against every other competitor's bot, and the results wrap up in person on event day.</p>
+          </div>
+          <div class="faq-item">
             <h3>Who can join?</h3>
             <p>Any student from any school, at any experience level.</p>
           </div>
           <div class="faq-item">
-            <h3>Do I need to know poker or AI?</h3>
+            <h3>Do I need poker or coding experience?</h3>
             <p>No. Beginners are welcome.</p>
           </div>
           <div class="faq-item">
-            <h3>How does it work?</h3>
-            <!-- TBD(leaning): format (multi-week submission window, then in-person finish on event day) -->
-            <p>The plan is for teams to build and test their bots during a submission window lasting a few weeks. The competition then wraps up in person on event day. <span class="tag">(planned)</span></p>
+            <h3>Which programming language?</h3>
+            <p>Python.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What's the tournament structure and form of poker?</h3>
+            <p>This will be announced in detail as registration wraps up and we get closer to the opening of the submission window.</p>
           </div>
           <div class="faq-item">
             <h3>When is it?</h3>
@@ -83,33 +96,11 @@
           </div>
           <div class="faq-item">
             <h3>Does it cost anything?</h3>
-            <!-- TBD(open): cost -->
-            <p>Not decided yet.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How big are teams?</h3>
-            <!-- TBD(open): team size -->
-            <p>Not decided yet.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Which programming language?</h3>
-            <!-- TBD(open): programming language -->
-            <p>Not decided yet.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can I take part remotely?</h3>
-            <!-- TBD(open): remote participation -->
-            <p>Not decided yet.</p>
+            <p>No.</p>
           </div>
           <div class="faq-item">
             <h3>Are there prizes?</h3>
-            <!-- TBD(open): prizes -->
-            <p>Not decided yet.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How do I get into the Discord?</h3>
-            <!-- TBD(leaning): Discord invite sent to registrants after signup; no public link -->
-            <p>Registrants get a Discord invite after signing up. <span class="tag">(planned)</span></p>
+            <p>Check back soon!</p>
           </div>
         </div>
       </div>
@@ -118,14 +109,16 @@
     <section class="band band--navy has-suit suit-heart" aria-labelledby="organizers-heading">
       <div class="wrap">
         <h2 class="band-title" id="organizers-heading">Organizers</h2>
-        <!-- TBD(open): organizer names, roles, photos -->
+        <!-- TBD(open): organizer photos -->
+        <p class="band-lede">Organized by KU AI Club officers.</p>
         <ul class="team">
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
-          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Name</span><span class="person-role">Role</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Amy Wright</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Audrey Facer</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Heagen Bell</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Heet Jani</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Ruben Pino-Martinez</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Spencer Weisharr</span></li>
+          <li class="person"><span class="avatar" aria-hidden="true"></span><span class="person-name">Vatsa Pandey</span></li>
         </ul>
 
         <div class="cta" id="sponsor">
@@ -133,7 +126,7 @@
             <h2>Interested in sponsoring?</h2>
             <p>We're looking for partners who want to meet students building poker bots. Email us and we'll share the details.</p>
           </div>
-          <a class="btn btn--primary" href="mailto:{{CONTACT_EMAIL}}">Email us</a>
+          <a class="btn btn--primary" href="mailto:kuaiorganization@gmail.com">Email us</a>
         </div>
       </div>
     </section>
@@ -142,22 +135,20 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p><a class="footer-name" href="index.html">{{EVENT_NAME}}</a></p>
+        <p><a class="footer-name" href="index.html">KU Pokerbots</a></p>
         <p>© 2027 KU AI Organization</p>
       </div>
       <div id="contact">
         <p class="footer-heading">Contact</p>
         <ul>
-          <li><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></li>
-          <!-- TBD(leaning): Instagram link -->
+          <li><a href="mailto:kuaiorganization@gmail.com">kuaiorganization@gmail.com</a></li>
           <li><a href="https://www.instagram.com/ku_ai_club/">Instagram</a></li>
         </ul>
       </div>
       <div>
         <p class="footer-heading">Find us</p>
-        <!-- TBD(leaning): LEEP2 location -->
-        <p>LEEP2, University of Kansas</p>
-        <p>Lawrence, KS</p>
+        <p>LEEP2, 1536 W 15th St</p>
+        <p>Lawrence, KS 66045</p>
       </div>
     </div>
   </footer>
