@@ -654,6 +654,16 @@ a.btn--light:hover {
   margin: 0 auto;
   border-radius: 50%;
   background: #1a3472;
+  color: var(--blue-soft);
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+img.avatar {
+  height: auto;
+  object-fit: cover;
 }
 
 .person-name {
@@ -914,6 +924,7 @@ a.btn--light:hover {
 
   .avatar {
     max-width: 112px;
+    font-size: 1.9rem;
   }
 
   .has-suit::after {
